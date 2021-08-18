@@ -1,5 +1,7 @@
 *.eslintcache
 node_modules/
+dist/
+.cache/
 
 # create-react-app default .gitignore file
 
