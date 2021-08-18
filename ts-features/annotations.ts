@@ -41,3 +41,14 @@ const logNumber: (i: number) => void = (i: number) => {
 const json = '{"x": 10, "y": 20}';
 const coordinates: { x: number; y: number } = JSON.parse(json); // returns an "any" type because method depends on the args so ts automatically says that method returns any
 console.log(coordinates);
+
+// 2) delayed initialization - declare a variable on one line and only initialize later
+
+let words = ["red", "green", "blue"];
+let foundWord: boolean; // in reality: let foundWord = false;
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === "green") {
+    foundWord = true;
+  }
+}
