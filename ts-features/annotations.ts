@@ -161,31 +161,51 @@ const carMakers = ["ford", "toyota", "chevy"];
 // annotate if initializing var with an empty array
 const carMakers2: string[] = [];
 
-const carsByMake = [
-  ["f150"],
-  ["corolla"],
-  ["camaro"]
-]
+const carsByMake = [["f150"], ["corolla"], ["camaro"]];
 
-const carsByMake2: string[][] = []
+const carsByMake2: string[][] = [];
 
 // why typed arrays?
 
 // helps with inference when extracting values
-const myCar = carMakers[0]
+const myCar = carMakers[0];
 const myCar2 = carMakers.pop();
 
 // prevent incompatible values
-carMakers.push(100);
+// carMakers.push(100);
 
 // helps with map, forEach, reduce functions
 carMakers.map((car: string): string => {
   return car.toUpperCase();
-})
+});
 
 // flexible types
 
-const importantDates: (Date | string)[] = [new Date()]
+const importantDates: (Date | string)[] = [new Date()];
 importantDates.push("2020-10-10");
 importantDates.push(new Date());
-importantDates.push(100);
+// importantDates.push(100);
+
+// tuples
+
+// object representation
+const drink = {
+  color: "brown",
+  carbonated: true,
+  sugar: 40,
+};
+
+// regular array representation
+const pepsi = ["brown", true, 40];
+pepsi[0] = 40;
+pepsi[1] = "brown";
+pepsi[2] = true;
+
+// tuple representation
+const coke: [string, boolean, number] = ["brown", true, 40];
+coke[0] = 40;
+
+// type alias
+type Drink = [string, boolean, number];
+
+const sprite: Drink = ["clear", true, 30];
