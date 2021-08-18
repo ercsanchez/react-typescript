@@ -209,3 +209,14 @@ coke[0] = 40;
 type Drink = [string, boolean, number];
 
 const sprite: Drink = ["clear", true, 30];
+
+// why tuples
+
+// tuple vs. objects
+const carSpecs: [number, number] = [400, 3354];
+
+// objects provide a better data structure for representing records/things
+const carStats = {
+  horsepower: 400,
+  weight: 3354,
+};
