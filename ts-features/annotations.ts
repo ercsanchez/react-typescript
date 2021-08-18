@@ -115,3 +115,41 @@ const throwError3 = (message: string): void => {
     throw new Error(message);
   }
 };
+
+// desctructuring with annotations
+const todaysWeather = {
+  date: new Date(),
+  weather: "sunny",
+};
+
+const logWeather = ({
+  date,
+  weather,
+}: {
+  date: Date;
+  weather: string;
+}): void => {
+  console.log(date);
+  console.log(weather);
+};
+
+logWeather(todaysWeather);
+
+// objects
+
+const profile = {
+  name: "alex",
+  age: 20,
+  coords: {
+    lat: 0,
+    lng: 15,
+  },
+  setAge(age: number): void {
+    this.age = age;
+  },
+};
+
+const { age, name }: { age: number; name: string } = profile;
+const {
+  coords: { lat, lng },
+}: { coords: { lat: number; lng: number } } = profile;
