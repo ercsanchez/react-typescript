@@ -153,3 +153,18 @@ const { age, name }: { age: number; name: string } = profile;
 const {
   coords: { lat, lng },
 }: { coords: { lat: number; lng: number } } = profile;
+
+// arrays
+
+const carMakers = ["ford", "toyota", "chevy"];
+
+// annotate if initializing var with an empty array
+const carMakers2: string[] = [];
+
+const carsByMake = [
+  ["f150"],
+  ["corolla"],
+  ["camaro"]
+]
+
+const carsByMake2: string[][] = []
