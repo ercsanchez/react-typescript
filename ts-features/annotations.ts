@@ -28,11 +28,6 @@ let point: { x: number; y: number } = {
   y: 20,
 };
 
-// functions
-const logNumber: (i: number) => void = (i: number) => {
-  console.log(i);
-};
-
 // when to use type annotations:
 
 // 1) func returns "any" type
@@ -64,3 +59,23 @@ for (let i = 0; i < numbers.length; i++) {
     numberAboveZero = numbers[i];
   }
 }
+
+// functions
+
+// annotations on variables that are assigned function expression/value
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i);
+};
+
+// annotations on function expression/value
+const add = (a: number, b: number): number => {
+  return a + b;
+};
+
+const subtract = (a: number, b: number) => {
+  a - b; // produces no warnings or errors on missing return statement since void is still a valid return type
+};
+
+const divide = (a: number, b: number) => {
+  return a / b + "string"; // produces runtime bug or logical error | infers wrong incorrect return type
+};
