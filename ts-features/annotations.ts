@@ -168,3 +168,24 @@ const carsByMake = [
 ]
 
 const carsByMake2: string[][] = []
+
+// why typed arrays?
+
+// helps with inference when extracting values
+const myCar = carMakers[0]
+const myCar2 = carMakers.pop();
+
+// prevent incompatible values
+carMakers.push(100);
+
+// helps with map, forEach, reduce functions
+carMakers.map((car: string): string => {
+  return car.toUpperCase();
+})
+
+// flexible types
+
+const importantDates: (Date | string)[] = [new Date()]
+importantDates.push("2020-10-10");
+importantDates.push(new Date());
+importantDates.push(100);
