@@ -63,7 +63,7 @@ for (let i = 0; i < numbers.length; i++) {
 // functions
 
 // annotations on variables that are assigned function expression/value
-const logNumber: (i: number) => void = (i: number) => {
+const logNumber: (i: number) => void = (i: number): void => {
   console.log(i);
 };
 
@@ -72,10 +72,21 @@ const add = (a: number, b: number): number => {
   return a + b;
 };
 
+// annotations for arrow functions (also anonymous)
 const subtract = (a: number, b: number) => {
   a - b; // produces no warnings or errors on missing return statement since void is still a valid return type
 };
 
 const divide = (a: number, b: number) => {
   return a / b + "string"; // produces runtime bug or logical error | infers wrong incorrect return type
+};
+
+// annotations for function declarations
+function divide2(a: number, b: number): number {
+  return a / b;
+}
+
+// annotations for anonymous funcs assigned to variable
+const multiply = function (a: number, b: number): number {
+  return a * b;
 };
