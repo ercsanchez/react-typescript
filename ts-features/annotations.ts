@@ -32,3 +32,12 @@ let point: { x: number; y: number } = {
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i);
 };
+
+// when to use type annotations:
+
+// 1) func returns "any" type
+
+// const json = "{'x': 10, 'y': 20}"; // not valid json since using single quotes
+const json = '{"x": 10, "y": 20}';
+const coordinates: { x: number; y: number } = JSON.parse(json); // returns an "any" type because method depends on the args so ts automatically says that method returns any
+console.log(coordinates);
