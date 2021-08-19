@@ -1,12 +1,13 @@
 /// <reference types="google.maps" />
 
 // instructions to every class on how they can be an argument to "addMaker" method
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number;
     lng: number;
   };
   markerContent(): string;
+  color: string;
 }
 
 export class CustomMap {
